@@ -2,22 +2,89 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md)
 
-這是一個 Codex skill，用於建立可重複使用的個人 IP 角色卡，並生成穩定一致的中文正文配圖、封面圖、知識卡片與視覺內容。
+這是一個 Codex skill，用於建立可重複使用的個人 IP 角色系統，並生成穩定一致的中文視覺內容：正文配圖、封面圖、知識卡片、工作流圖和多角色畫面。
 
-## 概覽
+這個專案不是一組一次性繪圖 prompt，而是一個面向 Codex 的小型角色資產系統：每個個人 IP 都有結構化角色卡、穩定的 `character_lock`、標準參考圖、配色規則、表情錨點和 workspace 級輸出庫。
 
-Personal IP Illustrations 會把一個人的身分、氣質、外形錨點、配色方案與內容領域，整理成一套可持續使用的角色系統。它適合公眾號/部落格正文配圖、社群封面、知識卡片、工作流視覺化、多 IP 同場景等任務。
+## 為什麼做這個
 
-這不是一次性的繪圖 prompt，而是一個「個人 IP 資產系統」：每個 IP 都有自己的角色卡、`character_lock`、標準參考圖、配色規則、表情錨點與輸出目錄。
+AI 圖像生成很擅長畫出一張好看的圖，但不擅長在很多主題裡持續保持同一個角色。對寫作者、教育者、創作者、顧問、產品人和技術部落客來說，視覺一致性很重要：同一個角色應該在不同文章和社群內容裡保持相同的臉、氣質、服裝、配色、道具和標註風格。
+
+Personal IP Illustrations 的目標，就是把一個人的身分和風格整理成一個可重複使用的 IP 物件。
+
+你不再只是說：
+
+```text
+幫我為這篇文章畫一張圖。
+```
+
+而是可以說：
+
+```text
+Use $personal-ip-illustrations 用我已有的 IP，為這篇草稿生成 4 張正文配圖。
+```
+
+skill 會解析 IP Card，注入完整 `character_lock`，選擇表情狀態，套用配色系統，規劃視覺隱喻，並把輸出保存在該 IP 自己的資料夾中。
 
 ## 功能
 
-- 從一句簡短描述或照片的泛化特徵建立結構化個人 IP Card。
-- 使用 `character_lock` 維持角色外觀一致。
-- 支援 `line-art` 與 `colored` 兩種渲染模式。
-- 使用穩定的 `palette_preset` 和每個 IP 自己的三元配色。
-- 支援文章配圖 shot list、封面圖、知識卡片、多 IP 畫面等。
-- 將使用者真實 IP 資產保存在 workspace 的 `ip-library/` 中，不寫入 skill 包。
+- 從一句簡短描述建立結構化個人 IP Card。
+- 從照片的寬泛特徵建立卡通 IP，同時避免保存生物識別資訊。
+- 為新 IP 生成 4 張標準參考圖。
+- 生成穩定一致的正文配圖。
+- 為長文章規劃配圖 shot list。
+- 生成社群封面、主視覺和知識卡片。
+- 支援單 IP 和明確要求時的多 IP 同場景畫面。
+- 使用 `character_lock` 保持角色身分一致。
+- 支援 `line-art` 和 `colored` 兩種渲染模式。
+- 使用 `palette_preset` 和每個 IP 自己的三元配色。
+- 將 prompt、manifest 和輸出保存在 `ip-library/`。
+
+## 適合誰
+
+- 想擁有穩定視覺分身的寫作者。
+- 需要乾淨概念配圖的技術部落客和開發者。
+- 需要溫暖持續角色的教育、育兒、心理諮詢類創作者。
+- 需要解釋框架或工作流的顧問、產品人和知識工作者。
+- 想把個人 IP 做成可重複使用資產，而不是每次重新畫圖的內容創作者。
+- 想用 Codex 做可重複使用視覺內容工作流的人。
+
+## 核心概念
+
+### IP Card
+
+IP Card 是一個結構化 YAML 物件，用來描述一個可重複使用個人角色。它包含身分、氣質、外形錨點、服裝、道具、常見動作、內容領域、配色、渲染模式、表情錨點、禁用風格和示例主題。
+
+### Character Lock
+
+`character_lock` 是每次生成圖片時注入 prompt 的不可變角色鎖定塊，用來保持角色身分一致。它描述的是生成後的卡通 IP，不是真人的臉。注入時應保留完整內容，包括眼鏡、鬍鬚風格、髮飾、姿態、標誌服裝等額外錨點。
+
+### 標準參考圖
+
+每個 IP 應該有 4 張標準參考圖：
+
+```text
+01-portrait.png      鎖定臉、髮型、服裝、氣質
+02-action.png        鎖定身體比例、動作、道具用法
+03-composition.png   鎖定構圖、留白、標籤位置
+04-style.png         鎖定線條品質、顏色質感、標註風格
+```
+
+### Palette Preset
+
+`palette_preset` 用來選擇初始配色方向，最終寫入 IP Card 的 `color_system` 才是生成時的真實依據。目前預設包括：
+
+```text
+indigo-engineering
+coral-warm
+custom
+```
+
+### 渲染模式
+
+`line-art`：角色身體和衣服內部保持白色/不填充，主色只作為少量身分點綴。
+
+`colored`：角色身體/衣服使用主色填充，但保留手繪質感。
 
 ## 安裝
 
@@ -33,25 +100,73 @@ Windows 路徑範例：
 C:\Users\<you>\.codex\skills\personal-ip-illustrations
 ```
 
-## 使用
+然後在 Codex 對話中調用：
 
 ```text
 Use $personal-ip-illustrations 為我建立個人 IP 角色卡，並生成4張標準參考圖。
 ```
 
-已有 IP 後，使用者生成資產應保存在目前 workspace：
+## 基礎用法
+
+### 建立新 IP
 
 ```text
-<workspace-root>/ip-library/<ip-id>/
+Use $personal-ip-illustrations
+我是一個寫 AI 編程和產品復盤的技術創作者，想建立一個個人 IP。
 ```
 
-不要把真實使用者資料、原始照片或生成輸出保存到 skill 資料夾裡。
+skill 會建立 IP Card、選擇配色預設、定義表情錨點、提取 `character_lock`，並生成必需的標準參考圖。
 
-## 隱私
+### 生成正文配圖
 
-照片轉 IP 流程只提取寬泛、可繪製的風格特徵。不要保存原始照片、照片副本、EXIF 中繼資料、來源檔名、來源路徑、生物識別資訊、精確臉部測量或可唯一識別真人的細節。
+```text
+Use $personal-ip-illustrations
+用小濤這個 IP，為這篇文章規劃 5 張正文配圖。
+```
 
-`character_lock` 描述的是生成後的卡通 IP，不是真人的臉。
+### 生成封面圖
+
+```text
+Use $personal-ip-illustrations
+用阿珍這個 IP，生成一張小紅書封面，標題是「媽媽的五分鐘」。
+```
+
+### 使用多個 IP
+
+```text
+Use $personal-ip-illustrations
+讓小濤和阿珍一起出現在一張圖裡，表現「技術工具如何幫媽媽節省時間」。
+```
+
+只有使用者明確要求多 IP 同場景時，才會使用多個 IP。
+
+## 使用者資料目錄
+
+使用者真實 IP 資料應保存在 workspace，而不是 skill 資料夾：
+
+```text
+<workspace-root>/ip-library/
+├── ip-registry.yaml
+├── xiao-tao/
+│   ├── ip-card.yaml
+│   ├── reference-images/
+│   └── outputs/
+└── a-zhen/
+    ├── ip-card.yaml
+    ├── reference-images/
+    └── outputs/
+```
+
+每組輸出建議包含：
+
+```text
+outputs/<date-topic>/
+├── 01-*.png
+├── prompt.md
+└── manifest.yaml
+```
+
+不要把真實使用者資料保存到 skill 資料夾裡。
 
 ## 倉庫結構
 
@@ -61,10 +176,72 @@ personal-ip-illustrations/
 ├── agents/
 │   └── openai.yaml
 ├── references/
-│   └── *.md
+│   ├── color-system.md
+│   ├── composition-patterns.md
+│   ├── expression-system.md
+│   ├── ip-card-template.md
+│   ├── ip-object-protocol.md
+│   ├── personality-mapping.md
+│   ├── photo-to-ip.md
+│   ├── prompt-template.md
+│   ├── qa-checklist.md
+│   ├── registry-and-storage.md
+│   ├── style-system.md
+│   └── validation-matrix.md
 └── assets/
     └── examples/
 ```
+
+## 隱私與安全
+
+照片轉 IP 流程只提取寬泛、可繪製的風格特徵。
+
+不要保存：
+
+- 原始照片
+- 照片副本
+- EXIF 中繼資料
+- 來源檔名
+- 來源路徑
+- 生物識別資訊
+- 精確臉部測量
+- 可唯一識別真人的細節
+
+`character_lock` 描述的是生成後的卡通 IP，不是真人的臉。
+
+如果來源照片涉及未成年人，提取特徵前必須獲得監護人同意。
+
+## 設計原則
+
+- 把每個 IP 當作可重複使用角色系統，而不是一次性 prompt。
+- 在不同主題中保持角色身分穩定。
+- 讓角色參與隱喻行動，而不是站在角落當裝飾。
+- 每張圖只表達一個清晰觀點。
+- 中文標註要短、少、準。
+- 背景保持乾淨、白底、留白充足。
+- 使用者資料必須放在 skill 包之外。
+
+## 示例 IP Card
+
+只讀示例位於：
+
+```text
+assets/examples/sample-cards/
+```
+
+它們只用於展示 schema 和風格約定，不是真實使用者資料。
+
+## Roadmap
+
+- 增加更多配色預設。
+- 增加更多風格原型。
+- 增加更豐富的驗證樣例。
+- 增加可選的 IP Card 校驗腳本。
+- 增加示例輸出 manifest。
+
+## 貢獻
+
+歡迎提交 issue 和 pull request。請不要在貢獻內容裡包含真實使用者照片、真實私有 IP Card、私有生成資產或可識別個人身分的資訊。
 
 ## License
 
