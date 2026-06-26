@@ -147,7 +147,11 @@ User-owned IP data should live in the workspace, not inside this skill:
 │   ├── ip-card.yaml
 │   ├── reference-images/
 │   └── outputs/
-└── a-zhen/
+├── a-zhen/
+│   ├── ip-card.yaml
+│   ├── reference-images/
+│   └── outputs/
+└── xiao-qiang/
     ├── ip-card.yaml
     ├── reference-images/
     └── outputs/
@@ -186,6 +190,11 @@ personal-ip-illustrations/
 │   └── validation-matrix.md
 └── assets/
     └── examples/
+        ├── sample-cards/          # read-only sample IP Cards
+        └── showcase/              # demo images for README
+            ├── xiao-tao/
+            ├── a-zhen/
+            └── xiao-qiang/
 ```
 
 ## Privacy and Safety
@@ -226,6 +235,65 @@ assets/examples/sample-cards/
 ```
 
 They are read-only references for schema and style conventions. They are not live user data.
+
+## Showcase
+
+The following examples demonstrate the skill's output across three different personal IPs. Each IP was created from a short brief, then used to generate scene illustrations. All images use the skill's `character_lock` injection, three-color palette, and expression anchor system.
+
+### 小涛 (Xiao Tao) — Programmer
+
+| | |
+|---|---|
+| **Identity** | 程序员 (Programmer), male |
+| **Render mode** | `line-art` |
+| **Palette** | 靛蓝 `#3B5B7E` + 橙 `#E89143` + 暖灰 `#9B9B9B` |
+| **IP Card** | [`sample-cards/xiao-tao-sample.yaml`](assets/examples/sample-cards/xiao-tao-sample.yaml) |
+
+**Scene 1: 需求越说越大** — A small requirement keeps growing like a balloon. Xiao Tao calmly pulls out scissors to cut it down.
+
+![需求越说越大](assets/examples/showcase/xiao-tao/01-big-requirement.png)
+
+**Scene 2: AI帮我写代码** — AI produces code like a machine. Xiao Tao is the quality inspector, checking each line with a magnifying glass.
+
+![AI帮我写代码](assets/examples/showcase/xiao-tao/02-ai-write-code.png)
+
+---
+
+### 阿珍 (A Zhen) — Super Mom
+
+| | |
+|---|---|
+| **Identity** | 超级宝妈 / 生活博主 (Super Mom / Life Blogger), female |
+| **Render mode** | `colored` |
+| **Palette** | 珊瑚粉 `#E8826B` + 鼠尾草绿 `#8FB386` + 暖黄 `#F2C94C` |
+| **IP Card** | [`sample-cards/a-zhen-sample.yaml`](assets/examples/sample-cards/a-zhen-sample.yaml) |
+
+**Scene 1: 妈妈也需要五分钟** — A Zhen finally finds five minutes alone, charging up like a phone while everything else is paused.
+
+![妈妈也需要五分钟](assets/examples/showcase/a-zhen/01-five-minutes.png)
+
+**Scene 2: 娃又在闹了** — Just as she's about to sip her coffee, the kid starts acting up. Coffee spills, glasses tilt, life happens.
+
+![娃又在闹了](assets/examples/showcase/a-zhen/02-kid-tantrum.png)
+
+---
+
+### 小强 (Xiao Qiang) — Lawyer
+
+| | |
+|---|---|
+| **Identity** | 律师 (Lawyer), male |
+| **Render mode** | `line-art` |
+| **Palette** | 靛蓝 `#3B5B7E` + 橙 `#E89143` + 暖灰 `#9B9B9B` |
+| **IP Card** | [`sample-cards/xiao-qiang-sample.yaml`](assets/examples/sample-cards/xiao-qiang-sample.yaml) |
+
+**Scene 1: 这份合同有坑** — Hidden traps in a contract. Xiao Qiang uses a magnifying glass and red pen to expose them one by one.
+
+![这份合同有坑](assets/examples/showcase/xiao-qiang/01-contract-trap.png)
+
+**Scene 2: 朋友借钱不还** — Friend borrowed money and won't return it. Xiao Qiang breaks it into three steps: keep evidence, set deadline, don't burn bridges.
+
+![朋友借钱不还](assets/examples/showcase/xiao-qiang/02-friend-owes-money.png)
 
 ## Roadmap
 

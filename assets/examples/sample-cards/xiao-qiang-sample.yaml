@@ -1,0 +1,113 @@
+ip_id: xiao-qiang
+ip_name: 小强
+status: active
+version: v1
+identity: 律师
+gender: male
+palette_preset: indigo-engineering
+render_mode: line-art
+positioning: 用证据和逻辑把模糊争议变成清晰判断的人
+core_personality:
+  - 严谨
+  - 敏锐
+  - 冷静
+secondary_traits:
+  - 一针见血
+  - 不轻易下结论
+  - 偶尔黑色幽默
+visual_anchors:
+  - 短发，利落偏分，发量适中
+  - 长方脸，下颌线棱角分明
+  - 细框眼镜（可选）
+  - 西装外套搭衬衫是标志性服装，但袖口常卷起
+clothing:
+  - 深色西装外套（常敞开不扣）
+  - 白色或浅蓝衬衫
+  - 袖口卷起至小臂（随时干活的姿态）
+signature_props:
+  - 放大镜
+  - 卷宗文件夹
+  - 红笔（标注合同风险点）
+  - 天平
+  - 印章
+  - 沙漏
+  - 便签纸（写关键条款）
+common_actions:
+  - 举放大镜看合同细节
+  - 用红笔划掉条款
+  - 往天平两端放证据
+  - 翻卷宗
+  - 盖章
+  - 把沙漏倒过来（时间紧迫）
+  - 撕掉无效条款
+content_domains:
+  - 法律科普
+  - 合同风险
+  - 维权指南
+  - 职场权益
+  - 热点案件分析
+  - 创业避坑
+visual_style: 白底手绘工程草图，黑色线稿，大量留白，偏文书严谨感
+color_system:
+  primary: 靛蓝
+  primary_hex: "#3B5B7E"
+  accent_a: 橙色
+  accent_a_hex: "#E89143"
+  accent_b: 暖灰
+  accent_b_hex: "#9B9B9B"
+  environment: 浅蓝灰
+environment_rules:
+  background: 纯白
+  ambient_tint: primary 20%
+  no_shadows: true
+  no_gradients: true
+expression_anchors:
+  default: 平静直视，嘴角微抿，眼神锐利但不攻击
+  thinking: 微微眯眼，手指点太阳穴，审视状
+  acting: 眉头微蹙，红笔悬在文件上方，专注
+  result_ok: 嘴角微扬，点头，红笔放下
+  result_bad: 摇头，叹气，把文件推开
+character_lock:
+  # 从卡通 01-portrait.png 提取的角色锁定描述，每次生成原样注入 prompt，不可改写；不要记录真人照片来源或生物识别细节
+  face: 长方脸，下颌线棱角分明，颧骨平，下巴略方
+  hair: 短发利落偏分，发量适中，自然黑色，发际线整齐
+  eyes: 凤眼，双眼皮，眼角微上挑，眼神锐利，瞳孔黑色
+  nose: 鼻梁高直，鼻翼窄，鼻头略尖
+  mouth: 薄唇，嘴角微抿，不笑时显得严肃
+  body: 偏瘦高，肩宽，7.5头身比例，站姿挺拔
+  clothing_default: 深靛蓝西装外套敞开不扣，内搭白色衬衫，袖口卷起至小臂
+  color_skin: 浅肤色，偏冷白
+annotation_style: 短、犀利、一针见血，每处 2-8 个字
+metaphor_pool:
+  - 天平
+  - 放大镜
+  - 卷宗
+  - 红线
+  - 印章
+  - 沙漏
+  - 合同
+  - 证据链
+  - 雷区
+composition_preferences:
+  - 前后对比图（签约前 vs 签约后）
+  - 问题拆解图（合同条款逐条分析）
+  - 单观点隐喻图（法律风险可视化）
+  - 证据链图
+avoid_styles:
+  - 赛博朋克
+  - 二次元
+  - 商业扁平插画
+  - 法庭剧剧照风
+  - PPT 架构图
+avoid_behaviors:
+  - 不要把小强画成法庭上咆哮的律师
+  - 不要让他总是穿法袍（他不是法官）
+  - 不要堆满法条文字截图
+  - 不要画成冷酷无情的精英感
+example_topics:
+  - 这份合同有坑
+  - 离职被扣工资怎么办
+  - 买房签合同的5个红线
+  - 朋友借钱不还
+  - 创业合伙协议避坑
+creation_basis: auto-inferred-from-identity

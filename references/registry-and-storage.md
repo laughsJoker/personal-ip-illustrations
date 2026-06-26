@@ -72,6 +72,12 @@ ips:
     version: v1
     path: a-zhen/
     summary: 超级宝妈，温暖手绘风，珊瑚粉+鼠尾草绿+暖黄，上色模式
+  - ip_id: xiao-qiang
+    ip_name: 小强
+    status: active
+    version: v1
+    path: xiao-qiang/
+    summary: 律师，白底手绘工程草图风，靛蓝+橙+暖灰，线稿模式
 ```
 
 ## IP Selection
