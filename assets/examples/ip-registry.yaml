@@ -1,0 +1,14 @@
+default_ip: xiao-tao
+ips:
+  - ip_id: xiao-tao
+    ip_name: 小涛
+    status: active
+    version: v2
+    path: xiao-tao/
+    summary: 程序员，白底手绘工程草图风，indigo-engineering 配色，线稿模式
+  - ip_id: a-zhen
+    ip_name: 阿珍
+    status: active
+    version: v1
+    path: a-zhen/
+    summary: 超级宝妈，温暖手绘卡通风，coral-warm 配色，上色模式

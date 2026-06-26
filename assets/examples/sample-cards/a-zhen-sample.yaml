@@ -1,0 +1,109 @@
+ip_id: a-zhen
+ip_name: 阿珍
+status: active
+version: v1
+identity: 超级宝妈 / 生活博主
+gender: female
+palette_preset: coral-warm
+render_mode: colored
+positioning: 在带娃和自我之间找到节奏的超级妈妈
+core_personality:
+  - 热情
+  - 有活力
+  - 温暖
+secondary_traits:
+  - 偶尔抓狂但很快恢复
+  - 自嘲式幽默
+  - 接地气
+visual_anchors:
+  - 黑色中短发，自然微卷，随意披肩或扎低马尾
+  - 细圆框眼镜（最标志性特征）
+  - 鹅蛋脸，轮廓柔和
+  - 笑起来弯弯眼（最易识别的表情特征）
+clothing:
+  - 宽松针织毛衣（蓝/暖色调）
+  - 休闲舒适上衣
+  - 围裙（做饭/带娃时）
+signature_props:
+  - 绘本
+  - 马克杯
+  - 小盆栽
+  - 儿童玩具散落一地
+  - 便当盒
+  - 手机（拍娃用）
+common_actions:
+  - 抱孩子
+  - 讲绘本
+  - 一边做饭一边看手机
+  - 整理散落的玩具
+  - 递零食
+  - 对着镜子深呼吸
+  - 和闺蜜视频吐槽
+content_domains:
+  - 宝妈日常
+  - 育儿心得
+  - 家庭生活
+  - 妈妈成长
+  - 亲子关系
+visual_style: 温暖手绘卡通风，圆润线条，上色填充，活泼有生活气
+color_system:
+  primary: 珊瑚粉
+  primary_hex: "#E8826B"
+  accent_a: 鼠尾草绿
+  accent_a_hex: "#8FB386"
+  accent_b: 暖黄
+  accent_b_hex: "#F2C94C"
+  environment: 浅暖灰
+environment_rules:
+  background: 纯白
+  ambient_tint: primary 20%
+  no_shadows: true
+  no_gradients: true
+expression_anchors:
+  default: 弯眼笑，细圆镜后眼睛亮晶晶，温暖又活力满满
+  thinking: 歪头想，手指点下巴，眼睛转圈
+  acting: 双手叉腰或张开双臂，充满干劲的样子
+  result_ok: 开心蹦跶，比耶或拍手，眼睛笑成月牙
+  result_bad: 嘴巴O型惊讶，或者扶额苦笑"又来了"
+character_lock:
+  # 从卡通 01-portrait.png 提取的角色锁定描述，每次生成原样注入 prompt，不可改写；不要记录真人照片来源或生物识别细节
+  face: 鹅蛋脸，轮廓柔和，额头圆润，下巴略尖
+  hair: 黑色中短发，自然微卷，长度及肩，随意披肩或扎低马尾，有碎发
+  eyes: 弯弯笑眼，笑起来呈月牙形，不笑时眼睛圆而明亮，瞳孔黑色
+  nose: 鼻梁柔和，鼻头圆润，鼻翼窄
+  mouth: 嘴唇厚度适中，嘴角自然上扬，笑时露齿
+  body: 中等身材，肩线柔和，6.5头身比例，略圆润
+  clothing_default: 宽松珊瑚粉针织毛衣，内搭白色打底衫，下穿深色休闲裤
+  glasses: 细圆框眼镜，金属色镜框，这是灵魂锚点不可省略
+  color_skin: 浅肤色，偏暖白
+annotation_style: 短句、活泼、偶尔自嘲，每处 2-8 个字
+metaphor_pool:
+  - 散落的玩具山
+  - 永远洗不完的衣服
+  - 孩子的十万个为什么
+  - 妈妈的五分钟自由时间
+  - 乱中有序的魔法盒子
+  - 充电站（咖啡角）
+composition_preferences:
+  - 单观点隐喻图
+  - 前后对比图（带娃前vs带娃后）
+  - 角色状态图
+  - 小漫画分镜
+avoid_styles:
+  - 高饱和糖果色
+  - 精致商业插画
+  - 二次元萌系
+  - 冷硬工程风
+  - 完美妈妈超人风
+avoid_behaviors:
+  - 不要把阿珍画成完美无瑕的超人妈妈
+  - 要允许她有疲惫、抓狂、头发乱的时刻
+  - 不要堆满可爱装饰失去真实感
+  - 细圆框眼镜必须保留（这是她的灵魂锚点）
+example_topics:
+  - 娃又在闹了
+  - 妈妈也需要五分钟
+  - 带娃生存指南
+  - 不是所有事都要立刻完美
+  - 乱一点也没事
+creation_basis: photo-derived-cartoon-ip

@@ -1,0 +1,24 @@
+# User/private IP assets
+ip-library/
+**/ip-library/
+
+# Local secrets
+.env
+.env.*
+*.key
+*.pem
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python/cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Generated outputs
+outputs/
+*.tmp
