@@ -1,13 +1,13 @@
 ---
 name: personal-ip-illustrations
-description: 生成可定制个人 IP 风格的中文视觉内容。用于用户要求根据姓名、职业、性格、外形、内容领域或角色卡创建个人 IP Card，或基于 IP Card 生成稳定一致的文章配图、正文插图、知识卡片、社媒封面、shot list、改图和多 IP 选择任务；支持白底手绘、漫画、拼贴、工程草图、温柔治愈、犀利吐槽等不同人格风格，三元配色系统、表情锚点联动、照片转 IP 流程，并管理多个个人 IP。
+description: 生成可定制个人 IP 视觉分身和中文视觉内容。用于用户要求根据姓名、职业、性格、外形、内容领域、照片或角色卡创建个人 IP Card / 视觉分身，或基于 IP Card 生成稳定一致的文章配图、正文插图、知识卡片、社媒封面、shot list、改图和多 IP 选择任务；支持白底手绘、漫画、拼贴、工程草图、温柔治愈、犀利吐槽等不同人格风格，三元配色系统、表情锚点联动、照片转 IP 流程，并管理多个个人 IP。
 ---
 
-# Personal IP Illustrations
+# 个人 IP 视觉分身
 
 ## Core Purpose
 
-Generate stable Chinese visual content from a personal IP Card. Treat each IP as a reusable character system, not a one-off prompt. Keep appearance, personality, props, actions, annotation tone, three-color palette, expression anchors, and forbidden styles consistent across topics.
+Generate stable Chinese visual content from a personal IP Card. Treat each visual avatar as a reusable character system, not a one-off prompt. Keep appearance, personality, props, actions, annotation tone, three-color palette, expression anchors, and forbidden styles consistent across topics.
 
 ## Quick Reference Cheat Sheet
 
@@ -26,6 +26,18 @@ Use this table to avoid reading every reference file for routine tasks:
 | Labels | 2-4 labels, 2-6 chars each. Accent A for flow, Accent B for key points. If wrong → reduce or no-text. | `style-system.md` |
 | QA after gen | Check: character_lock match ✓, three-color palette ✓, expression matches state ✓, one idea per image ✓, ≥35% white ✓ | `qa-checklist.md` |
 | IP storage | Each IP = one object folder under `ip-library/<ip-id>/`. Card + reference images + outputs self-contained. | `ip-object-protocol.md` |
+
+## User-Facing Storage Rule
+
+When users ask "我的图片怎么放" or "怎么使用", explain in tables:
+
+| User Need | Where It Goes | Rule |
+|-----------|---------------|------|
+| Source photo for creating a visual avatar | User uploads it in chat or provides a local path | Use only for current-session feature extraction. Do not persist the original photo. |
+| Live IP Card | `<workspace-root>/ip-library/<ip-id>/ip-card.yaml` | Contains identity, visual anchors, palette, expression anchors, and `character_lock`. |
+| Standard reference images | `<workspace-root>/ip-library/<ip-id>/reference-images/` | Four files: `01-portrait.png`, `02-action.png`, `03-composition.png`, `04-style.png`. |
+| Generated outputs | `<workspace-root>/ip-library/<ip-id>/outputs/<date-topic>/` | Save PNGs, `prompt.md`, and `manifest.yaml`. |
+| Public examples only | `assets/examples/` inside this skill | Never store real user data here. |
 
 ## Read References As Needed
 
