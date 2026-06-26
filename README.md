@@ -1,6 +1,12 @@
 # Personal IP Illustrations
 
+[English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md)
+
 A Codex skill for creating reusable personal IP character cards and generating consistent Chinese illustrations, covers, knowledge cards, and visual content.
+
+## Overview
+
+Personal IP Illustrations turns a person's identity, temperament, visual anchors, palette, and content domain into a reusable character system. It is designed for article illustrations, social media covers, knowledge cards, workflow visuals, and other Chinese visual content that needs a stable personal IP rather than one-off image prompts.
 
 ## What It Does
 
